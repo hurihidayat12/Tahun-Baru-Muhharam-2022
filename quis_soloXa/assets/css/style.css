@@ -1,0 +1,121 @@
+
+*{
+
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: sans-serif;
+}
+
+/* navbar */
+nav {
+  display: flex;
+  background-color: pink;
+  justify-content: space-around;
+  padding: 20px 0;
+  color: #ffff;
+  
+}
+
+nav logo {
+  font-family: 'Roboto', Menlo;
+  letter-spacing: 4px;
+}
+
+nav h3:hover {
+  color: black;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+
+nav ul li a {
+  color: #ffff;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+nav ul li a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+/* hamburger menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  opacity: 0;
+  left: -5px;
+  top: -3px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: flex;
+  width: 28px;
+  height: 3px;
+  background-color: white; 
+  border-radius: 3.2px;
+  transition: all 0.6s;
+}
+
+/* animation hamburger menu*/
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  bacground-color: white;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  bacground-color: white;
+  transform: rotate(-45deg) translate(-1px, 0)
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+/* responsive style */
+
+/* ukuran tablet */
+@media screen and (min-width: 768px) {
+  nav ul {
+    width: 50%;
+  }
+}
+
+/* ukuran mobile */
+@media screen and (min-width: 576px) {
+
+  nav ul {
+    display: none;
+  }
+}
+
+
